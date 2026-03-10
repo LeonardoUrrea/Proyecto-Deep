@@ -181,7 +181,7 @@
 
         <div class="examples-grid">
           <div class="example-card">
-            <div class="example-image placeholder">Imagen 1</div>
+            <img src="images/ejemplo-perros.png" alt="Ejemplo perros" class="real-example-image" />
             <h3>Escena con perros</h3>
             <p><strong>Referencia:</strong> A large and small dog interact in a grassy field.</p>
             <p><strong>Greedy:</strong> a dog is running in the grass</p>
@@ -189,25 +189,32 @@
           </div>
 
           <div class="example-card">
-            <div class="example-image placeholder">Imagen 2</div>
+            <img src="images/ejemplo-urbano.png" alt="Ejemplo urbano" class="real-example-image" />
             <h3>Escena urbana</h3>
-            <p><strong>Referencia:</strong> A dark skinned man walks by a woman talking on a cellphone.</p>
-            <p><strong>Greedy:</strong> a man in the red shirt is standing on a street</p>
+            <p><strong>Referencia:</strong> Two people sit on a park bench / Two people in chairs reading.</p>
+            <p><strong>Greedy:</strong> a man in blue and a red shirt is standing on a...</p>
             <p><strong>Beam:</strong> a man in a blue shirt is sitting on a street</p>
           </div>
 
           <div class="example-card">
-            <div class="example-image placeholder">Imagen 3</div>
-            <h3>Escena de acción</h3>
-            <p><strong>Referencia:</strong> A brown and white dog is running through an obstacle.</p>
-            <p><strong>Greedy:</strong> a dog is running in the grass</p>
-            <p><strong>Beam:</strong> a black and white dog is running in the grass</p>
+            <img src="images/comparacion-bleu.png" alt="Comparación BLEU" class="real-example-image" />
+            <h3>Comparación de métricas</h3>
+            <p><strong>Resultado:</strong> Beam Search superó a Greedy Search en BLEU-1 y BLEU-2.</p>
+            <p><strong>Greedy:</strong> BLEU-1 = 0.382 | BLEU-2 = 0.231</p>
+            <p><strong>Beam:</strong> BLEU-1 = 0.433 | BLEU-2 = 0.260</p>
           </div>
         </div>
 
-        <p class="note">
-          Nota: los espacios de imagen pueden reemplazarse por capturas reales del proyecto antes de la grabación final.
-        </p>
+        <div class="results-gallery">
+          <div class="gallery-card">
+            <img src="images/historial-entrenamiento.png" alt="Historial de entrenamiento" class="result-figure" />
+            <h3>Historial de entrenamiento</h3>
+            <p>
+              La pérdida de entrenamiento y validación mostró una reducción progresiva,
+              evidenciando aprendizaje estable del modelo durante las diferentes versiones del experimento.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
