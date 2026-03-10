@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto Deep | Image Captioning con Flickr8k</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Proyecto Deep</div>
+      <ul class="nav-links">
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#metodologia">Metodología</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#ejemplos">Ejemplos</a></li>
+        <li><a href="#conclusiones">Conclusiones</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Generación automática de descripciones de imágenes con Deep Learning</h1>
+      <p>
+        Proyecto desarrollado con el dataset Flickr8k, utilizando MobileNetV2 + LSTM
+        para generar captions automáticos a partir de imágenes.
+      </p>
+      <a href="#resultados" class="btn-primary">Ver resultados</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="problema" class="section">
+      <div class="container">
+        <h2>Problema y objetivo</h2>
+        <p>
+          El objetivo del proyecto fue desarrollar un sistema capaz de generar descripciones
+          automáticas de imágenes, integrando visión por computador y procesamiento de lenguaje natural.
+          Para ello se construyó un pipeline reproducible en Google Colab, orientado al entrenamiento,
+          validación y evaluación de un modelo de image captioning.
+        </p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <h3>Problema</h3>
+            <p>
+              Convertir contenido visual en descripciones textuales comprensibles,
+              de manera automática y coherente.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Dataset</h3>
+            <p>
+              Se utilizó Flickr8k, un conjunto de miles de imágenes anotadas con múltiples captions por imagen.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Objetivo</h3>
+            <p>
+              Implementar un modelo funcional de captioning y evaluar su desempeño mediante análisis cualitativo y métricas BLEU.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodologia" class="section alt">
+      <div class="container">
+        <h2>Metodología</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>1</span>
+            <div>
+              <h3>Preprocesamiento</h3>
+              <p>
+                Limpieza de captions, tokenización del texto y adición de tokens
+                <strong>startseq</strong> y <strong>endseq</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span>2</span>
+            <div>
+              <h3>Extracción de características</h3>
+              <p>
+                Uso de <strong>MobileNetV2</strong> preentrenada para convertir cada imagen
+                en un vector de características visuales.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span>3</span>
+            <div>
+              <h3>Modelo secuencial</h3>
+              <p>
+                Implementación de una red <strong>LSTM</strong> para generar la descripción
+                palabra por palabra a partir de las features visuales.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span>4</span>
+            <div>
+              <h3>Entrenamiento robusto</h3>
+              <p>
+                Se incorporó un script maestro anti-desconexiones en Colab, con recuperación
+                de features, tokenizer, historial y mejor modelo.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span>5</span>
+            <div>
+              <h3>Inferencia y evaluación</h3>
+              <p>
+                Se compararon estrategias de inferencia <strong>Greedy Search</strong> y
+                <strong>Beam Search</strong>, además de métricas BLEU.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" class="section">
+      <div class="container">
+        <h2>Resultados principales</h2>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <h3>Mejor val_loss</h3>
+            <p class="metric">3.6412</p>
+          </div>
+
+          <div class="metric-card">
+            <h3>Greedy BLEU-1</h3>
+            <p class="metric">0.382</p>
+          </div>
+
+          <div class="metric-card">
+            <h3>Greedy BLEU-2</h3>
+            <p class="metric">0.231</p>
+          </div>
+
+          <div class="metric-card">
+            <h3>Beam BLEU-1</h3>
+            <p class="metric">0.433</p>
+          </div>
+
+          <div class="metric-card">
+            <h3>Beam BLEU-2</h3>
+            <p class="metric">0.260</p>
+          </div>
+
+          <div class="metric-card">
+            <h3>Mejor inferencia</h3>
+            <p class="metric">Beam Search</p>
+          </div>
+        </div>
+
+        <div class="comparison-box">
+          <h3>Interpretación</h3>
+          <p>
+            El modelo logró generar captions completas y coherentes desde el punto de vista gramatical.
+            No obstante, persisten limitaciones semánticas en escenas complejas. La estrategia
+            <strong>Beam Search</strong> obtuvo mejor desempeño que Greedy Search en la evaluación final.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejemplos" class="section alt">
+      <div class="container">
+        <h2>Ejemplos de resultados</h2>
+
+        <div class="examples-grid">
+          <div class="example-card">
+            <div class="example-image placeholder">Imagen 1</div>
+            <h3>Escena con perros</h3>
+            <p><strong>Referencia:</strong> A large and small dog interact in a grassy field.</p>
+            <p><strong>Greedy:</strong> a dog is running in the grass</p>
+            <p><strong>Beam:</strong> a black dog is running in the grass</p>
+          </div>
+
+          <div class="example-card">
+            <div class="example-image placeholder">Imagen 2</div>
+            <h3>Escena urbana</h3>
+            <p><strong>Referencia:</strong> A dark skinned man walks by a woman talking on a cellphone.</p>
+            <p><strong>Greedy:</strong> a man in the red shirt is standing on a street</p>
+            <p><strong>Beam:</strong> a man in a blue shirt is sitting on a street</p>
+          </div>
+
+          <div class="example-card">
+            <div class="example-image placeholder">Imagen 3</div>
+            <h3>Escena de acción</h3>
+            <p><strong>Referencia:</strong> A brown and white dog is running through an obstacle.</p>
+            <p><strong>Greedy:</strong> a dog is running in the grass</p>
+            <p><strong>Beam:</strong> a black and white dog is running in the grass</p>
+          </div>
+        </div>
+
+        <p class="note">
+          Nota: los espacios de imagen pueden reemplazarse por capturas reales del proyecto antes de la grabación final.
+        </p>
+      </div>
+    </section>
+
+    <section id="conclusiones" class="section">
+      <div class="container">
+        <h2>Conclusiones</h2>
+        <div class="conclusion-box">
+          <p>
+            El proyecto cumplió su objetivo al desarrollar un sistema funcional de image captioning
+            con Flickr8k, basado en MobileNetV2 y LSTM. Se consolidó un pipeline reproducible en Colab,
+            se logró entrenamiento estable, se compararon versiones sucesivas del modelo y se evaluó
+            el desempeño mediante análisis cualitativo y métricas BLEU.
+          </p>
+          <p>
+            Aunque el modelo aún presenta limitaciones en la precisión semántica, especialmente en escenas
+            complejas, los resultados evidencian aprendizaje efectivo y una mejora consistente al usar
+            Beam Search como estrategia de inferencia.
+          </p>
+          <p>
+            Como trabajo futuro, una mejora natural sería incorporar mecanismos de atención para fortalecer
+            la relación entre las características visuales y la generación textual.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Proyecto Deep | Image Captioning con Flickr8k | GitHub Pages</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
