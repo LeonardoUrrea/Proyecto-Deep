@@ -3,124 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proyecto Deep | Image Captioning con Flickr8k</title>
+  <title>Proyecto Deep | Storytelling</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header class="hero">
-    <nav class="navbar">
-      <div class="logo">Proyecto Deep</div>
-      <ul class="nav-links">
-        <li><a href="#problema">Problema</a></li>
-        <li><a href="#metodologia">Metodología</a></li>
-        <li><a href="#resultados">Resultados</a></li>
-        <li><a href="#ejemplos">Ejemplos</a></li>
-        <li><a href="#conclusiones">Conclusiones</a></li>
-      </ul>
-    </nav>
-
+    <div class="overlay"></div>
     <div class="hero-content">
-      <h1>Generación automática de descripciones de imágenes con Deep Learning</h1>
-      <p>
-        Proyecto desarrollado con el dataset Flickr8k, utilizando MobileNetV2 + LSTM
-        para generar captions automáticos a partir de imágenes.
+      <p class="eyebrow">Proyecto de Storytelling</p>
+      <h1>Deep Learning aplicado a generación automática de descripciones de imágenes</h1>
+      <p class="hero-text">
+        Este proyecto presenta el proceso de construcción, entrenamiento y análisis de un modelo
+        de deep learning orientado a la generación automática de captions, integrando una narrativa
+        visual clara, técnica y dinámica.
       </p>
-      <a href="#resultados" class="btn-primary">Ver resultados</a>
+
+      <div class="hero-image-card">
+        <img id="random-image" src="" alt="Imagen aleatoria del proyecto" />
+      </div>
     </div>
   </header>
 
   <main>
-    <section id="problema" class="section">
+    <section class="section intro">
       <div class="container">
-        <h2>Problema y objetivo</h2>
+        <div class="section-tag">Contexto</div>
+        <h2>¿Qué problema aborda este proyecto?</h2>
         <p>
-          El objetivo del proyecto fue desarrollar un sistema capaz de generar descripciones
-          automáticas de imágenes, integrando visión por computador y procesamiento de lenguaje natural.
-          Para ello se construyó un pipeline reproducible en Google Colab, orientado al entrenamiento,
-          validación y evaluación de un modelo de image captioning.
+          La generación automática de descripciones de imágenes combina visión por computador y
+          procesamiento del lenguaje natural. El reto consiste en lograr que un modelo aprenda
+          a interpretar el contenido visual y producir una descripción coherente y útil.
         </p>
+        <p>
+          Para ello, se desarrolló un flujo de trabajo que incluyó preparación de datos,
+          entrenamiento del modelo, seguimiento del desempeño y análisis de resultados,
+          todo presentado bajo una experiencia de storytelling web.
+        </p>
+      </div>
+    </section>
 
-        <div class="cards-grid">
-          <div class="card">
-            <h3>Problema</h3>
-            <p>
-              Convertir contenido visual en descripciones textuales comprensibles,
-              de manera automática y coherente.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Dataset</h3>
-            <p>
-              Se utilizó Flickr8k, un conjunto de miles de imágenes anotadas con múltiples captions por imagen.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Objetivo</h3>
-            <p>
-              Implementar un modelo funcional de captioning y evaluar su desempeño mediante análisis cualitativo y métricas BLEU.
-            </p>
-          </div>
+    <section class="section two-columns">
+      <div class="container grid-2">
+        <div class="card">
+          <div class="section-tag">Objetivo</div>
+          <h3>Meta principal</h3>
+          <p>
+            Diseñar e implementar un modelo capaz de generar descripciones automáticas de imágenes,
+            evaluando su comportamiento durante el entrenamiento y comunicando los hallazgos de forma
+            visual e interactiva.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="section-tag">Enfoque</div>
+          <h3>Estrategia utilizada</h3>
+          <p>
+            Se integró un pipeline de deep learning con componentes de análisis y visualización,
+            permitiendo explicar de forma narrativa tanto la lógica del proyecto como su evolución
+            experimental.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="metodologia" class="section alt">
+    <section class="section process">
       <div class="container">
-        <h2>Metodología</h2>
+        <div class="section-tag">Metodología</div>
+        <h2>Fases desarrolladas</h2>
 
         <div class="timeline">
           <div class="timeline-item">
-            <span>1</span>
-            <div>
-              <h3>Preprocesamiento</h3>
+            <div class="timeline-number">1</div>
+            <div class="timeline-content">
+              <h3>Preparación del entorno y datos</h3>
               <p>
-                Limpieza de captions, tokenización del texto y adición de tokens
-                <strong>startseq</strong> y <strong>endseq</strong>.
+                Se organizó la estructura del proyecto, se cargaron los archivos necesarios y se
+                preparó el conjunto de datos para el entrenamiento del modelo.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
-            <span>2</span>
-            <div>
-              <h3>Extracción de características</h3>
+            <div class="timeline-number">2</div>
+            <div class="timeline-content">
+              <h3>Entrenamiento del modelo</h3>
               <p>
-                Uso de <strong>MobileNetV2</strong> preentrenada para convertir cada imagen
-                en un vector de características visuales.
+                Se ejecutaron pruebas de entrenamiento evaluando comportamiento, ajuste y evolución
+                del modelo a partir de métricas y resultados obtenidos.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
-            <span>3</span>
-            <div>
-              <h3>Modelo secuencial</h3>
+            <div class="timeline-number">3</div>
+            <div class="timeline-content">
+              <h3>Análisis de resultados</h3>
               <p>
-                Implementación de una red <strong>LSTM</strong> para generar la descripción
-                palabra por palabra a partir de las features visuales.
+                Se revisaron hallazgos clave, comportamiento de las predicciones y oportunidades de
+                mejora en la arquitectura y en el tratamiento de los datos.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
-            <span>4</span>
-            <div>
-              <h3>Entrenamiento robusto</h3>
+            <div class="timeline-number">4</div>
+            <div class="timeline-content">
+              <h3>Comunicación en formato storytelling</h3>
               <p>
-                Se incorporó un script maestro anti-desconexiones en Colab, con recuperación
-                de features, tokenizer, historial y mejor modelo.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <span>5</span>
-            <div>
-              <h3>Inferencia y evaluación</h3>
-              <p>
-                Se compararon estrategias de inferencia <strong>Greedy Search</strong> y
-                <strong>Beam Search</strong>, además de métricas BLEU.
+                Finalmente, se construyó una experiencia web para presentar el proyecto de forma
+                atractiva, profesional y comprensible.
               </p>
             </div>
           </div>
@@ -128,122 +120,58 @@
       </div>
     </section>
 
-    <section id="resultados" class="section">
+    <section class="section highlight">
       <div class="container">
-        <h2>Resultados principales</h2>
-
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <h3>Mejor val_loss</h3>
-            <p class="metric">3.6412</p>
-          </div>
-
-          <div class="metric-card">
-            <h3>Greedy BLEU-1</h3>
-            <p class="metric">0.382</p>
-          </div>
-
-          <div class="metric-card">
-            <h3>Greedy BLEU-2</h3>
-            <p class="metric">0.231</p>
-          </div>
-
-          <div class="metric-card">
-            <h3>Beam BLEU-1</h3>
-            <p class="metric">0.433</p>
-          </div>
-
-          <div class="metric-card">
-            <h3>Beam BLEU-2</h3>
-            <p class="metric">0.260</p>
-          </div>
-
-          <div class="metric-card">
-            <h3>Mejor inferencia</h3>
-            <p class="metric">Beam Search</p>
-          </div>
-        </div>
-
-        <div class="comparison-box">
-          <h3>Interpretación</h3>
+        <div class="highlight-box">
+          <div class="section-tag">Valor agregado</div>
+          <h2>Una presentación más dinámica y visual</h2>
           <p>
-            El modelo logró generar captions completas y coherentes desde el punto de vista gramatical.
-            No obstante, persisten limitaciones semánticas en escenas complejas. La estrategia
-            <strong>Beam Search</strong> obtuvo mejor desempeño que Greedy Search en la evaluación final.
+            Como plus del proyecto, la página incorpora imágenes cargadas dinámicamente desde un
+            archivo <strong>images.json</strong>, permitiendo mostrar contenido visual aleatorio
+            en cada carga del sitio y dando una sensación más premium e interactiva.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="ejemplos" class="section alt">
+    <section class="section conclusions">
       <div class="container">
-        <h2>Ejemplos de resultados</h2>
-
-        <div class="examples-grid">
-          <div class="example-card">
-            <img src="images/perros.png" alt="Ejemplo perros" class="real-example-image" />
-            <h3>Escena con perros</h3>
-            <p><strong>Referencia:</strong> A large and small dog interact in a grassy field.</p>
-            <p><strong>Greedy:</strong> a dog is running in the grass</p>
-            <p><strong>Beam:</strong> a black dog is running in the grass</p>
-          </div>
-
-          <div class="example-card">
-            <img src="images/personajes-urbanos.png" alt="Ejemplo urbano" class="real-example-image" />
-            <h3>Escena urbana</h3>
-            <p><strong>Referencia:</strong> Two people sit on a park bench / Two people in chairs reading.</p>
-            <p><strong>Greedy:</strong> a man in blue and a red shirt is standing on a...</p>
-            <p><strong>Beam:</strong> a man in a blue shirt is sitting on a street</p>
-          </div>
-
-          <div class="example-card">
-            <img src="images/comparacion-bleu.png" alt="Comparación BLEU" class="real-example-image" />
-            <h3>Comparación de métricas</h3>
-            <p><strong>Resultado:</strong> Beam Search superó a Greedy Search en BLEU-1 y BLEU-2.</p>
-            <p><strong>Greedy:</strong> BLEU-1 = 0.382 | BLEU-2 = 0.231</p>
-            <p><strong>Beam:</strong> BLEU-1 = 0.433 | BLEU-2 = 0.260</p>
-          </div>
-        </div>
-
-        <div class="results-gallery">
-          <div class="gallery-card">
-            <img src="images/historial-entrenamiento.png" alt="Historial de entrenamiento" class="result-figure" />
-            <h3>Historial de entrenamiento</h3>
-            <p>
-              La pérdida de entrenamiento y validación mostró una reducción progresiva,
-              evidenciando aprendizaje estable del modelo durante las diferentes versiones del experimento.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="conclusiones" class="section">
-      <div class="container">
+        <div class="section-tag">Cierre</div>
         <h2>Conclusiones</h2>
-        <div class="conclusion-box">
-          <p>
-            El proyecto cumplió su objetivo al desarrollar un sistema funcional de image captioning
-            con Flickr8k, basado en MobileNetV2 y LSTM. Se consolidó un pipeline reproducible en Colab,
-            se logró entrenamiento estable, se compararon versiones sucesivas del modelo y se evaluó
-            el desempeño mediante análisis cualitativo y métricas BLEU.
-          </p>
-          <p>
-            Aunque el modelo aún presenta limitaciones en la precisión semántica, especialmente en escenas
-            complejas, los resultados evidencian aprendizaje efectivo y una mejora consistente al usar
-            Beam Search como estrategia de inferencia.
-          </p>
-          <p>
-            Como trabajo futuro, una mejora natural sería incorporar mecanismos de atención para fortalecer
-            la relación entre las características visuales y la generación textual.
-          </p>
+        <div class="grid-3">
+          <article class="mini-card">
+            <h3>Integración técnica</h3>
+            <p>
+              El proyecto logró integrar un enfoque técnico de deep learning con una comunicación
+              visual clara y organizada.
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <h3>Aprendizaje práctico</h3>
+            <p>
+              El desarrollo permitió comprender mejor el ciclo completo desde la preparación de datos
+              hasta la interpretación de resultados.
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <h3>Proyección</h3>
+            <p>
+              La solución puede seguir creciendo con nuevas visualizaciones, mejores modelos y una
+              experiencia de usuario aún más robusta.
+            </p>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Proyecto Deep | Image Captioning con Flickr8k | GitHub Pages</p>
+    <div class="container footer-content">
+      <p>Proyecto Deep Learning · Storytelling Web en GitHub Pages</p>
+      <p>Desarrollado como presentación final del proyecto</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
