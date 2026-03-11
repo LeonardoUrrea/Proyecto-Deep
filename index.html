@@ -177,20 +177,35 @@ Comparación: Greedy vs Beam Search</code></pre>
 
         <p id="status">Cargando resultados...</p>
 
-        <div class="viewer-card">
-          <img id="dataset-image" src="" alt="Imagen del dataset">
+<div class="viewer-card">
+  <div class="viewer-grid">
+    <div class="viewer-image-panel">
+      <img id="dataset-image" src="" alt="Imagen del dataset">
+    </div>
 
-          <div class="info">
-            <p><strong>Imagen:</strong> <span id="image-name">-</span></p>
-            <p><strong>Greedy:</strong> <span id="greedy-text">-</span></p>
-            <p><strong>Beam Search:</strong> <span id="beam-text">-</span></p>
+    <div class="viewer-text-panel">
+      <div class="info">
+        <p><strong>Imagen:</strong> <span id="image-name">-</span></p>
 
-            <div class="references-box">
-              <strong>Referencias reales:</strong>
-              <ul id="references-list"></ul>
-            </div>
-          </div>
+        <div class="prediction-box">
+          <h3>Greedy</h3>
+          <p id="greedy-text">-</p>
         </div>
+
+        <div class="prediction-box">
+          <h3>Beam Search</h3>
+          <p id="beam-text">-</p>
+        </div>
+
+        <div class="references-box">
+          <h3>Referencias reales</h3>
+          <ul id="references-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
 
         <div class="controls">
           <button id="prev-btn">Anterior</button>
