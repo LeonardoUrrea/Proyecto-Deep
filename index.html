@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prueba de imágenes aleatorias</title>
+  <title>Prueba predicciones Flickr8k</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="container">
+    <h1>Prueba de predicciones Flickr8k</h1>
+    <p id="status">Cargando resultados...</p>
 
-  <main class="test-container">
-    <h1>Prueba de conexión con images.json</h1>
-    <p id="status">Cargando imagen aleatoria...</p>
+    <div class="card">
+      <img id="dataset-image" src="" alt="Imagen del dataset">
 
-    <div class="image-box">
-      <img id="random-image" src="" alt="Imagen aleatoria de prueba">
+      <div class="info">
+        <p><strong>Imagen:</strong> <span id="image-name">-</span></p>
+        <p><strong>Greedy:</strong> <span id="greedy-text">-</span></p>
+        <p><strong>Beam Search:</strong> <span id="beam-text">-</span></p>
+
+        <div>
+          <strong>Referencias reales:</strong>
+          <ul id="references-list"></ul>
+        </div>
+      </div>
     </div>
 
-    <div class="info-box">
-      <p><strong>Ruta cargada:</strong></p>
-      <p id="image-path">Aún no disponible</p>
+    <div class="controls">
+      <button id="prev-btn">Anterior</button>
+      <button id="next-btn">Siguiente</button>
     </div>
   </main>
 
