@@ -1,62 +1,75 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #0f172a;
   color: white;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 30px;
 }
 
-.test-container {
-  width: 100%;
-  max-width: 900px;
-  text-align: center;
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 #status {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
   color: #cbd5e1;
+  margin-bottom: 20px;
 }
 
-.image-box {
+.card {
   background: #1e293b;
   border: 1px solid #334155;
   border-radius: 16px;
   padding: 20px;
+}
+
+#dataset-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  background: #0b1220;
+  border-radius: 12px;
   margin-bottom: 20px;
 }
 
-#random-image {
-  max-width: 100%;
-  max-height: 500px;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
+.info p {
+  line-height: 1.6;
 }
 
-.info-box {
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  padding: 15px;
+#references-list {
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
-#image-path {
-  color: #38bdf8;
-  word-break: break-all;
-  margin-top: 8px;
+#references-list li {
+  margin-bottom: 8px;
+  color: #cbd5e1;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
 }
