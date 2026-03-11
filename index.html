@@ -3,33 +3,218 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prueba predicciones Flickr8k</title>
+  <title>Proyecto Deep | Flickr8k Image Captioning</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>Prueba de predicciones Flickr8k</h1>
-    <p id="status">Cargando resultados...</p>
 
-    <div class="card">
-      <img id="dataset-image" src="" alt="Imagen del dataset">
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Proyecto Deep Learning</p>
+      <h1>Generación automática de descripciones de imágenes con Flickr8k</h1>
+      <p class="hero-text">
+        Desarrollo de una red neuronal para image captioning usando Flickr8k,
+        MobileNetV2 para extracción de características visuales y una arquitectura
+        secuencial con Embedding + LSTM para generación automática de captions.
+      </p>
+    </div>
+  </header>
 
-      <div class="info">
-        <p><strong>Imagen:</strong> <span id="image-name">-</span></p>
-        <p><strong>Greedy:</strong> <span id="greedy-text">-</span></p>
-        <p><strong>Beam Search:</strong> <span id="beam-text">-</span></p>
+  <main>
+    <section class="section">
+      <div class="container">
+        <p class="section-tag">Objetivo</p>
+        <h2>¿Qué buscaba resolver el proyecto?</h2>
+        <p>
+          El objetivo fue construir una red neuronal capaz de generar descripciones
+          automáticas a partir de imágenes. Para ello se utilizó el dataset Flickr8k,
+          que combina imágenes reales con múltiples captions de referencia por cada caso.
+        </p>
+        <p>
+          El proyecto no se limitó a entrenar un modelo: también integró una fase de
+          evaluación cuantitativa y cualitativa, comparando estrategias de inferencia
+          como Greedy Search y Beam Search para analizar el comportamiento de las
+          secuencias generadas.
+        </p>
+      </div>
+    </section>
 
-        <div>
-          <strong>Referencias reales:</strong>
-          <ul id="references-list"></ul>
+    <section class="section alt">
+      <div class="container">
+        <p class="section-tag">Datos</p>
+        <h2>Preparación del dataset y organización del flujo</h2>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>8092</h3>
+            <p>imágenes con captions originales</p>
+          </div>
+          <div class="stat-card">
+            <h3>8090</h3>
+            <p>imágenes válidas tras filtrado</p>
+          </div>
+          <div class="stat-card">
+            <h3>7281</h3>
+            <p>imágenes para entrenamiento</p>
+          </div>
+          <div class="stat-card">
+            <h3>809</h3>
+            <p>imágenes para validación</p>
+          </div>
+          <div class="stat-card">
+            <h3>8832</h3>
+            <p>palabras en el vocabulario</p>
+          </div>
+          <div class="stat-card">
+            <h3>38</h3>
+            <p>longitud máxima de secuencia</p>
+          </div>
+        </div>
+
+        <p class="section-note">
+          El flujo incluyó descarga del dataset, limpieza de captions, extracción de
+          features, construcción del tokenizer, división train/validation y generación
+          de artefactos reutilizables para entrenamiento y evaluación.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-tag">Arquitectura</p>
+        <h2>Modelo desarrollado</h2>
+
+        <div class="cards-2">
+          <article class="content-card">
+            <h3>Extracción visual</h3>
+            <p>
+              Se utilizó <strong>MobileNetV2</strong> como CNN para extraer una representación
+              compacta de cada imagen. Estas features visuales son la base de entrada del modelo.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h3>Generación secuencial</h3>
+            <p>
+              El decoder se construyó con <strong>Embedding + LSTM</strong>, permitiendo generar
+              palabra por palabra la descripción final a partir de las features visuales y del
+              contexto secuencial previo.
+            </p>
+          </article>
+        </div>
+
+        <div class="code-block">
+<pre><code>CNN: MobileNetV2
+Decoder: Embedding + LSTM
+Dataset: Flickr8k
+Salida: captions automáticos
+Evaluación: BLEU + análisis cualitativo
+Comparación: Greedy vs Beam Search</code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="controls">
-      <button id="prev-btn">Anterior</button>
-      <button id="next-btn">Siguiente</button>
-    </div>
+    <section class="section alt">
+      <div class="container">
+        <p class="section-tag">Entrenamiento</p>
+        <h2>Evolución del modelo</h2>
+        <p>
+          Durante el entrenamiento se observó una reducción progresiva de la pérdida,
+          con oscilaciones esperables entre entrenamiento y validación. El mejor valor
+          de <strong>val_loss</strong> alcanzado en la corrida final fue <strong>3.6412</strong>.
+        </p>
+
+        <div class="chart-card">
+          <img src="images/historial-entrenamiento.png" alt="Historial de entrenamiento">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-tag">Evaluación</p>
+        <h2>Comparación de desempeño: Greedy vs Beam Search</h2>
+        <p>
+          La evaluación cuantitativa mostró que <strong>Beam Search</strong> superó a
+          <strong>Greedy Search</strong> en las métricas promedio BLEU-1 y BLEU-2
+          sobre la muestra evaluada.
+        </p>
+
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <h3>Greedy BLEU-1</h3>
+            <p>0.382</p>
+          </div>
+          <div class="metric-box">
+            <h3>Greedy BLEU-2</h3>
+            <p>0.231</p>
+          </div>
+          <div class="metric-box">
+            <h3>Beam BLEU-1</h3>
+            <p>0.433</p>
+          </div>
+          <div class="metric-box">
+            <h3>Beam BLEU-2</h3>
+            <p>0.260</p>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <img src="images/comparacion-bleu.png" alt="Comparación promedio BLEU">
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <p class="section-tag">Resultados cualitativos</p>
+        <h2>Predicciones generadas por el modelo</h2>
+        <p>
+          A continuación se presenta una muestra de imágenes del dataset con sus
+          captions generadas previamente en Colab. El visor permite recorrer ejemplos
+          y comparar la salida del modelo con las referencias reales disponibles.
+        </p>
+
+        <p id="status">Cargando resultados...</p>
+
+        <div class="viewer-card">
+          <img id="dataset-image" src="" alt="Imagen del dataset">
+
+          <div class="info">
+            <p><strong>Imagen:</strong> <span id="image-name">-</span></p>
+            <p><strong>Greedy:</strong> <span id="greedy-text">-</span></p>
+            <p><strong>Beam Search:</strong> <span id="beam-text">-</span></p>
+
+            <div class="references-box">
+              <strong>Referencias reales:</strong>
+              <ul id="references-list"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="prev-btn">Anterior</button>
+          <button id="next-btn">Siguiente</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-tag">Conclusión</p>
+        <h2>Cierre del proyecto</h2>
+        <p>
+          El proyecto permitió desarrollar y evaluar una red neuronal de image captioning
+          usando Flickr8k, integrando preparación de datos, entrenamiento, evaluación
+          cuantitativa y revisión cualitativa de resultados.
+        </p>
+        <p>
+          Los resultados muestran que el modelo fue capaz de generar descripciones
+          automáticas plausibles y que la estrategia Beam Search ofreció un mejor
+          desempeño promedio frente a Greedy Search en la muestra analizada.
+        </p>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
