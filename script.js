@@ -1,20 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Proyecto Deep cargado correctamente en GitHub Pages.");
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await fetch("images.json");
+    const images = await response.json();
 
-  const links = document.querySelectorAll('a[href^="#"]');
+    if (!images || images.length === 0) {
+      console.warn("No se encontraron imágenes en images.json");
+      return;
+    }
 
-  links.forEach(link => {
-    link.addEventListener("click", event => {
-      const targetId = link.getAttribute("href");
-      const target = document.querySelector(targetId);
+    // Escoger una imagen aleatoria
+    const randomImage = images[Math.floor(Math.random() * images.length)];
 
-      if (target) {
-        event.preventDefault();
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    });
-  });
+    // Buscar el elemento donde se mostrará la imagen
+    const imgElement = document.getElementById("random-image");
+
+    if (imgElement) {
+      imgElement.src = randomImage;
+      imgElement.alt = "Imagen aleatoria del proyecto";
+    } else {
+      console.warn('No existe un elemento con id="random-image" en index.html');
+    }
+
+  } catch (error) {
+    console.error("Error cargando images.json:", error);
+  }
 });
