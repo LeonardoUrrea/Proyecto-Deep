@@ -1,23 +1,41 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  const status = document.getElementById("status");
+  const imagePathText = document.getElementById("image-path");
+  const imgElement = document.getElementById("random-image");
+
   try {
-    const response = await fetch("images.json");
-    if (!response.ok) throw new Error(`No se pudo cargar images.json: ${response.status}`);
+    const basePath = "/Proyecto-Deep/";
+    const response = await fetch(basePath + "images.json");
+
+    if (!response.ok) {
+      throw new Error("No se pudo cargar images.json. Estado: " + response.status);
+    }
 
     const images = await response.json();
-    console.log("Imágenes cargadas:", images);
 
-    if (!images.length) return;
+    if (!images || images.length === 0) {
+      status.textContent = "El archivo images.json está vacío.";
+      return;
+    }
 
     const randomImage = images[Math.floor(Math.random() * images.length)];
-    console.log("Imagen seleccionada:", randomImage);
+    const finalPath = basePath + randomImage;
 
-    const imgElement = document.getElementById("random-image");
-    if (imgElement) {
-      imgElement.src = randomImage;
-      imgElement.alt = "Imagen aleatoria del proyecto";
-      imgElement.onerror = () => console.error("No se pudo cargar:", randomImage);
-    }
+    imagePathText.textContent = finalPath;
+    imgElement.src = finalPath;
+
+    imgElement.onload = () => {
+      status.textContent = "Imagen cargada correctamente.";
+      console.log("Imagen cargada:", finalPath);
+    };
+
+    imgElement.onerror = () => {
+      status.textContent = "La imagen no pudo cargarse.";
+      console.error("Error cargando imagen:", finalPath);
+    };
+
   } catch (error) {
-    console.error("Error:", error);
+    status.textContent = "Error general: " + error.message;
+    console.error(error);
   }
 });
