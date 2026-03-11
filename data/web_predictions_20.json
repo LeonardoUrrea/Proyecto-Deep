@@ -1,0 +1,262 @@
+[
+  {
+    "image_name": "444481722_690d0cadcf.jpg",
+    "image_path": "images/444481722_690d0cadcf.jpg",
+    "references": [
+      "A dark skinned man walks by a woman talking on a cellphone .",
+      "A male walking and a female talking on the phone beside the concrete building .",
+      "People stand outside near a concrete wall and a window ."
+    ],
+    "greedy_raw": "startseq a man in the red shirt is standing on a street endseq",
+    "greedy_clean": "a man in the red shirt is standing on a street",
+    "beam_raw": "startseq a man in a blue shirt is sitting on a street endseq",
+    "beam_clean": "a man in a blue shirt is sitting on a street"
+  },
+  {
+    "image_name": "424506167_01f365726b.jpg",
+    "image_path": "images/424506167_01f365726b.jpg",
+    "references": [
+      "A large and small dog interact in a grassy field .",
+      "A small brown jumps in the air as a big brown dog watches .",
+      "\"A small dog stands next to a larger dog , out in a field .\""
+    ],
+    "greedy_raw": "startseq a dog is running in the grass endseq",
+    "greedy_clean": "a dog is running in the grass",
+    "beam_raw": "startseq a black dog is running in the grass endseq",
+    "beam_clean": "a black dog is running in the grass"
+  },
+  {
+    "image_name": "2518853257_02f30e282e.jpg",
+    "image_path": "images/2518853257_02f30e282e.jpg",
+    "references": [
+      "Two individuals sit on a park bench .",
+      "Two people in chairs reading .",
+      "Two people in lawn chairs reading books ."
+    ],
+    "greedy_raw": "startseq a man in blue and a red shirt is standing on a street endseq",
+    "greedy_clean": "a man in blue and a red shirt is standing on a street",
+    "beam_raw": "startseq a man in a blue shirt is sitting on a street endseq",
+    "beam_clean": "a man in a blue shirt is sitting on a street"
+  },
+  {
+    "image_name": "2923497185_c64004ff2d.jpg",
+    "image_path": "images/2923497185_c64004ff2d.jpg",
+    "references": [
+      "a brown and white dog is running through a white marker in a grassy field .",
+      "A brown and white dog runs through an obstacle .",
+      "A brown dog is running between two grey poles that are very close together ."
+    ],
+    "greedy_raw": "startseq a dog is running in the grass endseq",
+    "greedy_clean": "a dog is running in the grass",
+    "beam_raw": "startseq a black and white dog is running in the grass endseq",
+    "beam_clean": "a black and white dog is running in the grass"
+  },
+  {
+    "image_name": "359082432_c1fd5aa2d6.jpg",
+    "image_path": "images/359082432_c1fd5aa2d6.jpg",
+    "references": [
+      "A lab dog is standing on a fallen tree trunk with a guy in the background .",
+      "A man and a dog are standing on a tree that has fallen over to the ground .",
+      "A man watches his yellow dog hunt for something from on top of a fallen tree ."
+    ],
+    "greedy_raw": "startseq a dog is running in the snow endseq",
+    "greedy_clean": "a dog is running in the snow",
+    "beam_raw": "startseq a black and white dog is running in the snow endseq",
+    "beam_clean": "a black and white dog is running in the snow"
+  },
+  {
+    "image_name": "2959500257_3621429a37.jpg",
+    "image_path": "images/2959500257_3621429a37.jpg",
+    "references": [
+      "A girl is riding horseback .",
+      "A girl rides on a brown horse down a forest path .",
+      "A little girl is riding a horse in the woods ."
+    ],
+    "greedy_raw": "startseq a man in the red shirt is standing on a large field endseq",
+    "greedy_clean": "a man in the red shirt is standing on a large field",
+    "beam_raw": "startseq a man in a blue shirt is standing in the water endseq",
+    "beam_clean": "a man in a blue shirt is standing in the water"
+  },
+  {
+    "image_name": "411175971_0fffd3b8c6.jpg",
+    "image_path": "images/411175971_0fffd3b8c6.jpg",
+    "references": [
+      "A brown dog is shown standing in the water near a muddy beach .",
+      "A dog happily plays in tidal overflow on a cloudy day .",
+      "A dog is playing in water on a beach ."
+    ],
+    "greedy_raw": "startseq a man is standing in the water endseq",
+    "greedy_clean": "a man is standing in the water",
+    "beam_raw": "startseq a man in a blue shirt is standing in the water endseq",
+    "beam_clean": "a man in a blue shirt is standing in the water"
+  },
+  {
+    "image_name": "987907964_5a06a63609.jpg",
+    "image_path": "images/987907964_5a06a63609.jpg",
+    "references": [
+      "one brown and white dog chasing a black and white dog through the grass",
+      "The two dogs are running through the grass .",
+      "Two cocker spaniels running through the grass ."
+    ],
+    "greedy_raw": "startseq a dog is running in the water endseq",
+    "greedy_clean": "a dog is running in the water",
+    "beam_raw": "startseq a black and white dog is running in the snow endseq",
+    "beam_clean": "a black and white dog is running in the snow"
+  },
+  {
+    "image_name": "3215896272_e9b4b547a9.jpg",
+    "image_path": "images/3215896272_e9b4b547a9.jpg",
+    "references": [
+      "A dog wearing a green sweater and a backpack walking on snow .",
+      "A dog wearing a green sweater and backpack running in the snow",
+      "A dog wearing a green sweater and fanny pack walks on a snow-covered field ."
+    ],
+    "greedy_raw": "startseq a dog is running in the grass endseq",
+    "greedy_clean": "a dog is running in the grass",
+    "beam_raw": "startseq a black and white dog is running in the grass endseq",
+    "beam_clean": "a black and white dog is running in the grass"
+  },
+  {
+    "image_name": "458213442_12c59e61a0.jpg",
+    "image_path": "images/458213442_12c59e61a0.jpg",
+    "references": [
+      "A black and white dog is jumping over a hurdle .",
+      "A black and white dog jumps over a bar in an agility test .",
+      "A dog jumps over a hurdle on a grass field ."
+    ],
+    "greedy_raw": "startseq a dog is running in the grass endseq",
+    "greedy_clean": "a dog is running in the grass",
+    "beam_raw": "startseq a black and white dog is running in the snow endseq",
+    "beam_clean": "a black and white dog is running in the snow"
+  },
+  {
+    "image_name": "2665586311_9a5f4e3fbe.jpg",
+    "image_path": "images/2665586311_9a5f4e3fbe.jpg",
+    "references": [
+      "\"A girl in pink pants running , an ornate Spanish ruin in the background .\"",
+      "\"The girl dressed in purple walks through the alley , followed by a girl in pink .\"",
+      "Two children within the ruins of a building ."
+    ],
+    "greedy_raw": "startseq a man in the red shirt is standing on a street endseq",
+    "greedy_clean": "a man in the red shirt is standing on a street",
+    "beam_raw": "startseq a man in a blue shirt is sitting on a street endseq",
+    "beam_clean": "a man in a blue shirt is sitting on a street"
+  },
+  {
+    "image_name": "3349528565_0bc013b70a.jpg",
+    "image_path": "images/3349528565_0bc013b70a.jpg",
+    "references": [
+      "A girl is crouching on a skateboard next to a brightly colored wall .",
+      "A girl on a skateboard is riding on a cement ledge next to a fence .",
+      "A girl 's hair flips up while she rides down the stairs on a skateboard ."
+    ],
+    "greedy_raw": "startseq a man in blue and a red shirt is standing on a street endseq",
+    "greedy_clean": "a man in blue and a red shirt is standing on a street",
+    "beam_raw": "startseq a man in a blue shirt is sitting on a street endseq",
+    "beam_clean": "a man in a blue shirt is sitting on a street"
+  },
+  {
+    "image_name": "520491467_54cbc0a866.jpg",
+    "image_path": "images/520491467_54cbc0a866.jpg",
+    "references": [
+      "A little boy and girl are jumping on a trampoline in front of a yellow building .",
+      "\"Two children , a boy and a girl , in the air above a trampoline .\"",
+      "Two children jumping on a trampoline ."
+    ],
+    "greedy_raw": "startseq a man in the red shirt is standing on a street endseq",
+    "greedy_clean": "a man in the red shirt is standing on a street",
+    "beam_raw": "startseq a man in a blue shirt is sitting on a street endseq",
+    "beam_clean": "a man in a blue shirt is sitting on a street"
+  },
+  {
+    "image_name": "252846811_7b250935a7.jpg",
+    "image_path": "images/252846811_7b250935a7.jpg",
+    "references": [
+      "Two brown dogs play rough on green grass .",
+      "Two dogs play",
+      "Two tan colored dogs are roughhousing outdoors ."
+    ],
+    "greedy_raw": "startseq a dog is running in the grass endseq",
+    "greedy_clean": "a dog is running in the grass",
+    "beam_raw": "startseq a black and white dog is running in the snow endseq",
+    "beam_clean": "a black and white dog is running in the snow"
+  },
+  {
+    "image_name": "1298295313_db1f4c6522.jpg",
+    "image_path": "images/1298295313_db1f4c6522.jpg",
+    "references": [
+      "A blonde boy wearing a blue life vest and camo shorts jumps off a diveboard into a blue lake .",
+      "A boy diving backward off a pier in a large lake .",
+      "A boy in a blue life jacket jumps into the water ."
+    ],
+    "greedy_raw": "startseq a boy in the pool of a blue pool endseq",
+    "greedy_clean": "a boy in the pool of a blue pool",
+    "beam_raw": "startseq a boy in a blue shirt is playing in the water endseq",
+    "beam_clean": "a boy in a blue shirt is playing in the water"
+  },
+  {
+    "image_name": "512163695_51a108761d.jpg",
+    "image_path": "images/512163695_51a108761d.jpg",
+    "references": [
+      "A male in grey pants with a blue shirt and backpack walking down a sidewalk in a neighborhood .",
+      "A man walks between houses",
+      "A person with a backpack carrying bags of groceries down a sidewalk between houses ."
+    ],
+    "greedy_raw": "startseq a man in the red shirt is standing on a street endseq",
+    "greedy_clean": "a man in the red shirt is standing on a street",
+    "beam_raw": "startseq a man in a blue shirt is sitting on a street endseq",
+    "beam_clean": "a man in a blue shirt is sitting on a street"
+  },
+  {
+    "image_name": "2402744031_11f9f2f2b8.jpg",
+    "image_path": "images/2402744031_11f9f2f2b8.jpg",
+    "references": [
+      "\"Hooded women at event , one seated next to a table with large glasses on it .\"",
+      "People shopping at an outdoor marketplace .",
+      "Three women in headscarfs look at somthing out of frame ."
+    ],
+    "greedy_raw": "startseq a man in blue and a red shirt is standing on a street endseq",
+    "greedy_clean": "a man in blue and a red shirt is standing on a street",
+    "beam_raw": "startseq a man in a blue shirt is sitting on a street endseq",
+    "beam_clean": "a man in a blue shirt is sitting on a street"
+  },
+  {
+    "image_name": "954987350_a0c608b467.jpg",
+    "image_path": "images/954987350_a0c608b467.jpg",
+    "references": [
+      "A female in a pink tank top drinking beer .",
+      "\"A woman in a dark pink tank top , has a bag across her shoulder .\"",
+      "A woman in a pink tank top drinking out of a plastic glass ."
+    ],
+    "greedy_raw": "startseq a man in blue and a red shirt is standing on a street endseq",
+    "greedy_clean": "a man in blue and a red shirt is standing on a street",
+    "beam_raw": "startseq a man in a blue shirt is sitting on a street endseq",
+    "beam_clean": "a man in a blue shirt is sitting on a street"
+  },
+  {
+    "image_name": "2541701582_0a651c380f.jpg",
+    "image_path": "images/2541701582_0a651c380f.jpg",
+    "references": [
+      "A couple ride bikes next to an orange fence by the ocean .",
+      "A man and a woman ride bikes on the boardwalk .",
+      "A middle aged man and woman ride bikes down a road beside the water ."
+    ],
+    "greedy_raw": "startseq a man in red is jumping on a snowy hill endseq",
+    "greedy_clean": "a man in red is jumping on a snowy hill",
+    "beam_raw": "startseq a man in a red shirt is standing in the air endseq",
+    "beam_clean": "a man in a red shirt is standing in the air"
+  },
+  {
+    "image_name": "2083434441_a93bc6306b.jpg",
+    "image_path": "images/2083434441_a93bc6306b.jpg",
+    "references": [
+      "an elderly woman is riding a bicycle in the city as a yellow taxi is about to pass by .",
+      "An elderly woman rides a bicycle along a city street .",
+      "An older woman with blond hair rides a bicycle down the street ."
+    ],
+    "greedy_raw": "startseq a man in blue and a red shirt is standing on a street endseq",
+    "greedy_clean": "a man in blue and a red shirt is standing on a street",
+    "beam_raw": "startseq a man in a red shirt is sitting on a street endseq",
+    "beam_clean": "a man in a red shirt is sitting on a street"
+  }
+]
