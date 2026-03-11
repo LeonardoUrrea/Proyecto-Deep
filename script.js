@@ -23,7 +23,7 @@ function renderPrediction(index) {
   beamText.textContent = item.beam_clean || "-";
 
   referencesList.innerHTML = "";
-  (item.references || []).forEach(ref => {
+  (item.references || []).forEach((ref) => {
     const li = document.createElement("li");
     li.textContent = ref;
     referencesList.appendChild(li);
@@ -55,16 +55,75 @@ async function loadPredictions() {
   }
 }
 
-prevBtn.addEventListener("click", () => {
-  if (!predictions.length) return;
-  currentIndex = (currentIndex - 1 + predictions.length) % predictions.length;
-  renderPrediction(currentIndex);
-});
+if (prevBtn) {
+  prevBtn.addEventListener("click", () => {
+    if (!predictions.length) return;
+    currentIndex = (currentIndex - 1 + predictions.length) % predictions.length;
+    renderPrediction(currentIndex);
+  });
+}
 
-nextBtn.addEventListener("click", () => {
-  if (!predictions.length) return;
-  currentIndex = (currentIndex + 1) % predictions.length;
-  renderPrediction(currentIndex);
-});
+if (nextBtn) {
+  nextBtn.addEventListener("click", () => {
+    if (!predictions.length) return;
+    currentIndex = (currentIndex + 1) % predictions.length;
+    renderPrediction(currentIndex);
+  });
+}
+
+/* Animación de aparición al hacer scroll */
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+revealElements.forEach((el) => revealObserver.observe(el));
+
+/* Contadores animados */
+const counters = document.querySelectorAll(".count");
+let countersStarted = false;
+
+function animateCounter(el) {
+  const target = Number(el.dataset.target);
+  let current = 0;
+  const increment = Math.max(1, Math.ceil(target / 60));
+
+  const timer = setInterval(() => {
+    current += increment;
+
+    if (current >= target) {
+      el.textContent = target;
+      clearInterval(timer);
+    } else {
+      el.textContent = current;
+    }
+  }, 20);
+}
+
+const statsSection = document.querySelector("#datos");
+
+const statsObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !countersStarted) {
+        counters.forEach((counter) => animateCounter(counter));
+        countersStarted = true;
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+if (statsSection) {
+  statsObserver.observe(statsSection);
+}
 
 loadPredictions();
