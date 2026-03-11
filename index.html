@@ -1,178 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proyecto Deep | Storytelling</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba de imágenes aleatorias</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <p class="eyebrow">Proyecto de Storytelling</p>
-      <h1>Deep Learning aplicado a generación automática de descripciones de imágenes</h1>
-      <p class="hero-text">
-        Este proyecto presenta el proceso de construcción, entrenamiento y análisis de un modelo
-        de deep learning orientado a la generación automática de captions, integrando una narrativa
-        visual clara, técnica y dinámica.
-      </p>
+  <main class="test-container">
+    <h1>Prueba de conexión con images.json</h1>
+    <p id="status">Cargando imagen aleatoria...</p>
 
-      <div class="hero-image-card">
-        <img id="random-image" src="" alt="Imagen aleatoria del proyecto" />
-      </div>
+    <div class="image-box">
+      <img id="random-image" src="" alt="Imagen aleatoria de prueba">
     </div>
-  </header>
 
-  <main>
-    <section class="section intro">
-      <div class="container">
-        <div class="section-tag">Contexto</div>
-        <h2>¿Qué problema aborda este proyecto?</h2>
-        <p>
-          La generación automática de descripciones de imágenes combina visión por computador y
-          procesamiento del lenguaje natural. El reto consiste en lograr que un modelo aprenda
-          a interpretar el contenido visual y producir una descripción coherente y útil.
-        </p>
-        <p>
-          Para ello, se desarrolló un flujo de trabajo que incluyó preparación de datos,
-          entrenamiento del modelo, seguimiento del desempeño y análisis de resultados,
-          todo presentado bajo una experiencia de storytelling web.
-        </p>
-      </div>
-    </section>
-
-    <section class="section two-columns">
-      <div class="container grid-2">
-        <div class="card">
-          <div class="section-tag">Objetivo</div>
-          <h3>Meta principal</h3>
-          <p>
-            Diseñar e implementar un modelo capaz de generar descripciones automáticas de imágenes,
-            evaluando su comportamiento durante el entrenamiento y comunicando los hallazgos de forma
-            visual e interactiva.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="section-tag">Enfoque</div>
-          <h3>Estrategia utilizada</h3>
-          <p>
-            Se integró un pipeline de deep learning con componentes de análisis y visualización,
-            permitiendo explicar de forma narrativa tanto la lógica del proyecto como su evolución
-            experimental.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process">
-      <div class="container">
-        <div class="section-tag">Metodología</div>
-        <h2>Fases desarrolladas</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-number">1</div>
-            <div class="timeline-content">
-              <h3>Preparación del entorno y datos</h3>
-              <p>
-                Se organizó la estructura del proyecto, se cargaron los archivos necesarios y se
-                preparó el conjunto de datos para el entrenamiento del modelo.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-number">2</div>
-            <div class="timeline-content">
-              <h3>Entrenamiento del modelo</h3>
-              <p>
-                Se ejecutaron pruebas de entrenamiento evaluando comportamiento, ajuste y evolución
-                del modelo a partir de métricas y resultados obtenidos.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-number">3</div>
-            <div class="timeline-content">
-              <h3>Análisis de resultados</h3>
-              <p>
-                Se revisaron hallazgos clave, comportamiento de las predicciones y oportunidades de
-                mejora en la arquitectura y en el tratamiento de los datos.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-number">4</div>
-            <div class="timeline-content">
-              <h3>Comunicación en formato storytelling</h3>
-              <p>
-                Finalmente, se construyó una experiencia web para presentar el proyecto de forma
-                atractiva, profesional y comprensible.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section highlight">
-      <div class="container">
-        <div class="highlight-box">
-          <div class="section-tag">Valor agregado</div>
-          <h2>Una presentación más dinámica y visual</h2>
-          <p>
-            Como plus del proyecto, la página incorpora imágenes cargadas dinámicamente desde un
-            archivo <strong>images.json</strong>, permitiendo mostrar contenido visual aleatorio
-            en cada carga del sitio y dando una sensación más premium e interactiva.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section conclusions">
-      <div class="container">
-        <div class="section-tag">Cierre</div>
-        <h2>Conclusiones</h2>
-        <div class="grid-3">
-          <article class="mini-card">
-            <h3>Integración técnica</h3>
-            <p>
-              El proyecto logró integrar un enfoque técnico de deep learning con una comunicación
-              visual clara y organizada.
-            </p>
-          </article>
-
-          <article class="mini-card">
-            <h3>Aprendizaje práctico</h3>
-            <p>
-              El desarrollo permitió comprender mejor el ciclo completo desde la preparación de datos
-              hasta la interpretación de resultados.
-            </p>
-          </article>
-
-          <article class="mini-card">
-            <h3>Proyección</h3>
-            <p>
-              La solución puede seguir creciendo con nuevas visualizaciones, mejores modelos y una
-              experiencia de usuario aún más robusta.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div class="info-box">
+      <p><strong>Ruta cargada:</strong></p>
+      <p id="image-path">Aún no disponible</p>
+    </div>
   </main>
-
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>Proyecto Deep Learning · Storytelling Web en GitHub Pages</p>
-      <p>Desarrollado como presentación final del proyecto</p>
-    </div>
-  </footer>
 
   <script src="script.js"></script>
 </body>
